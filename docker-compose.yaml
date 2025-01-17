@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  ibagentFront:
+    image: angular-ibrequest-1:latest
+    restart: always
+    ports:
+      - "80:80"
+
+  ubuntuFront:
+    image: ubuntu
+    restart: always
+    container_name: ubuntuFront
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    command: sleep infinity

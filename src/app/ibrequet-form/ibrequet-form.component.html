@@ -1,0 +1,29 @@
+<form [formGroup]="ibRequestForm" (ngSubmit)="onSubmit()">
+  @if(responseMessage){
+    <div>
+      <p>{{ responseMessage }}</p>
+    </div>
+  }
+    <div>
+      <label for="symbols">Symbols:</label>
+      <input id="symbols" formControlName="symbols" />
+    </div>
+    <div>
+      <label for="endDateTime">End Date Time:</label>
+      <input id="endDateTime" formControlName="endDateTime" />
+    </div>
+    <div>
+        <label for="duration">Duration:</label>
+        <select id="duration" formControlName="duration">
+          <option value="1 D">1 Day</option>
+          <option value="1 W">1 Week</option>
+          <option value="1 M">1 Month</option>
+          <option value="1 Y">1 Year</option>
+        </select>
+      </div>
+    <div>
+      <label for="barSize">Bar Size:</label>
+      <input id="barSize" formControlName="barSize" />
+    </div>
+    <button type="submit">Submit</button>
+  </form>
